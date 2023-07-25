@@ -1,0 +1,25 @@
+.header {
+  height: 50px;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 5px 6px -6px #222;
+  border-bottom: 1px solid #555;
+}
+
+.styledLink {
+  color: #555;
+  font-size: 17px;
+  margin-left: 20px;
+  text-decoration: none;
+  outline: none;
+}
+
+.styledLink:active {
+  color: orange;
+}
+
+.headerList {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
