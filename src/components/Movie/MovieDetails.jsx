@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
-import { searchMovieToIdApi } from '../Utils/Api';
+import { searchMovieToIdApi } from '../../Utils/Api';
 import styled from './MovieDetails.module.css';
 
 const MovieDetails = () => {

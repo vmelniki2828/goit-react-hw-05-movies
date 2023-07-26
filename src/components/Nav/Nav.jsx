@@ -9,7 +9,7 @@ const Nav = () => {
           <NavLink to="/" className={styled.styledLink}>Home</NavLink>
         </li>
         <li>
-          <NavLink to="movies" className={styled.styledLink}>Movies</NavLink>
+          <NavLink to="movie" className={styled.styledLink}>Movies</NavLink>
         </li>
       </ul>
     </div>

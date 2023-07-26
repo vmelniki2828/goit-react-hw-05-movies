@@ -1,13 +1,13 @@
 import { lazy, Suspense } from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
-import Loader from './Utils/Loader';
+import Loader from '../Utils/Loader';
 
 const Nav = lazy(() => import('./Nav/Nav'));
-const Home = lazy(() => import('./Pages/Home'));
+const Home = lazy(() => import('../Pages/Home'));
 const Cast = lazy(() => import('./Cast/Cast'))
 const Reviews = lazy(() => import('./Reviews/Reviews'));
 const MovieDetails = lazy(() => import('./Movie/MovieDetails'));
-const SearchMovie = lazy(() => import('./Pages/SearchMovie'));
+const SearchMovie = lazy(() => import('../Pages/SearchMovie'));
 
 const MainLayout = () => {
   return (
@@ -25,12 +25,11 @@ export function App() {
     <Routes>
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="movies" element={<SearchMovie />} />
-        <Route path="movies/:movieId" element={<MovieDetails />}>
+        <Route path="movie" element={<SearchMovie />} />
+        <Route path="movie/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
-        <Route path="trending" />
       </Route>
       <Route path="*" element={<MainLayout />} />
     </Routes>

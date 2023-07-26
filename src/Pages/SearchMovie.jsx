@@ -1,5 +1,5 @@
 import MovieList from 'components/Movie/MovieList';
-import { searchMovieApi } from 'components/Utils/Api';
+import { searchMovieApi } from 'Utils/Api';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -10,9 +10,14 @@ const SearchMovie = () => {
   const [movieList, setMovieList] = useState([]);
   const query = searchParams.get('query');
 
+  localStorage.setItem('query', query)
+
   const SearchingMovie = e => {
-    e.preventDefault();
-    setSearchParams({ query: movieName });
+    e.preventDefault();  
+    if(movieName !== ''){
+      setSearchParams({ query: movieName });
+    }
+     
   };
 
   const changeInput = e => {

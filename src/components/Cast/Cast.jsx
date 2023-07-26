@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { searchMovieCastApi } from '../Utils/Api';
+import { searchMovieCastApi } from '../../Utils/Api';
 
 const Cast = () => {
   const START_URL = 'https://image.tmdb.org/t/p/w500/';
