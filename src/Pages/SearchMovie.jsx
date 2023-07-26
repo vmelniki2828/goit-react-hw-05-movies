@@ -10,28 +10,29 @@ const SearchMovie = () => {
   const [movieList, setMovieList] = useState([]);
   const query = searchParams.get('query');
 
-  localStorage.setItem('query', query)
+
 
   const SearchingMovie = e => {
     e.preventDefault();  
-    if(movieName !== ''){
+    if(movieName !== ''){ 
       setSearchParams({ query: movieName });
     }
-     
+    
   };
 
   const changeInput = e => {
-    setMovieName(e.target.value);
+    localStorage.setItem('query', e.target.value)
+    setMovieName(localStorage.getItem('query'));
   };
 
   useEffect(() => {
+    console.log(query)
     query && searchMovieApi(query).then(data => setMovieList(data));
   }, [query]);
-
   return (
     <>
       <form onSubmit={SearchingMovie}>
-        <input type="text" value={movieName} onChange={changeInput} />
+        <input type="text" value={localStorage.getItem('query')} onChange={changeInput} />
         <button type="submit">Search</button>
       </form>
       <MovieList movies={movieList} />
