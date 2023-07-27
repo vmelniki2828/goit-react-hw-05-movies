@@ -9,6 +9,7 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const location = useLocation();
 
+
   useEffect(() => {
     searchMovieToIdApi(movieId).then(data => setDetails(data));
   }, [movieId]);
@@ -16,7 +17,7 @@ const MovieDetails = () => {
   const { title, poster_path, vote_average, overview, genres } = details;
   return (
     <>
-      <Link to={location.state || '/'}>
+      <Link to={location.state || `/movie?query=${localStorage.getItem(`query`)}`}>
         <button className={styled.btn}>Go back</button>
       </Link>
       <img src={`${START_URL}${poster_path}`} alt={title}></img>

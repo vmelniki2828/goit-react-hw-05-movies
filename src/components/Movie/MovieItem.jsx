@@ -17,5 +17,5 @@ const MovieItem = ({ movie }) => {
 export default MovieItem;
 
 MovieItem.propTypes = {
-    movie: PropTypes.array.isRequired,
+    movie: PropTypes.object.isRequired,
   }
